@@ -8,12 +8,12 @@ gpu-orchestrator is a Kubernetes controller that implements a custom GPU workloa
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                    Kubernetes API Server                      │
-│                                                                 │
-│  ┌─────────────┐  ┌──────────┐  ┌──────────────────────────┐  │
-│  │ GPUWorkload │  │   Node   │  │ Job / Pod Workloads      │  │
-│  │ Custom Res. │  │ Resources│  │                          │  │
-│  └─────────────┘  └──────────┘  └──────────────────────────┘  │
+│                    Kubernetes API Server                     │
+│                                                              │
+│  ┌─────────────┐  ┌──────────┐  ┌──────────────────────────┐ │
+│  │ GPUWorkload │  │   Node   │  │ Job / Pod Workloads      │ │
+│  │ Custom Res. │  │ Resources│  │                          │ │
+│  └─────────────┘  └──────────┘  └──────────────────────────┘ │
 └──────────────────────────────────────────────────────────────┘
           ▲                 ▲                    ▲
           │                 │                    │
@@ -21,22 +21,22 @@ gpu-orchestrator is a Kubernetes controller that implements a custom GPU workloa
           │ Updates         │ GPU Capacity       │ Deploys
           │                 │                    │
 ┌──────────┴─────────────────────────────────────────────────┐
-│                                                               │
-│     gpu-orchestrator Controller Manager (Deployment)           │
-│                                                               │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │         GPUWorkloadReconciler                          │  │
-│  │                                                        │  │
-│  │  1. Watch GPUWorkload objects (Create/Update/Delete)  │  │
-│  │  2. Filter Ready nodes with GPU capacity              │  │
-│  │  3. Apply Scheduling Strategy                         │  │
-│  │  4. Create Kubernetes Job on selected node            │  │
-│  │  5. Update GPUWorkload status                         │  │
-│  │  6. Record Prometheus metrics                         │  │
-│  │  7. Handle retries with exponential backoff           │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                               │
-└───────────────────────────────────────────────────────────────┘
+│                                                            │
+│     gpu-orchestrator Controller Manager (Deployment)       │
+│                                                            │
+│  ┌────────────────────────────────────────────────────────┐│
+│  │         GPUWorkloadReconciler                          ││
+│  │                                                        ││
+│  │  1. Watch GPUWorkload objects (Create/Update/Delete)   ││
+│  │  2. Filter Ready nodes with GPU capacity               ││
+│  │  3. Apply Scheduling Strategy                          ││
+│  │  4. Create Kubernetes Job on selected node             ││
+│  │  5. Update GPUWorkload status                          ││
+│  │  6. Record Prometheus metrics                          ││
+│  │  7. Handle retries with exponential backoff            ││
+│  └────────────────────────────────────────────────────────┘│
+│                                                            │
+└────────────────────────────────────────────────────────────┘
 ```
 
 ## Component Breakdown
@@ -291,25 +291,25 @@ Production-ready Kubernetes Deployment:
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│                      Kubernetes                             │
+│                      Kubernetes                            │
 ├────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ API Server   │  │ Scheduler    │  │ Kubelet      │     │
-│  │              │  │              │  │              │     │
-│  │ - Stores     │  │ - Places     │  │ - Runs       │     │
-│  │   CRDs       │  │   Pods/Jobs  │  │   containers │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│         ▲                  ▲                ▲               │
-│         │                  │                │               │
-│         │ CREATE Job       │ Watches Job    │ Executes      │
-│         │ GET Nodes        │ Schedules      │               │
-│         │                  │                │               │
+│                                                            │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │ API Server   │  │ Scheduler    │  │ Kubelet      │      │
+│  │              │  │              │  │              │      │
+│  │ - Stores     │  │ - Places     │  │ - Runs       │      │
+│  │   CRDs       │  │   Pods/Jobs  │  │   containers │      │
+│  └──────────────┘  └──────────────┘  └──────────────┘      │
+│         ▲                  ▲                ▲              │
+│         │                  │                │              │
+│         │ CREATE Job       │ Watches Job    │ Executes     │
+│         │ GET Nodes        │ Schedules      │              │
+│         │                  │                │              │
 │  ┌────────────────────────────────────────────┐            │
-│  │    gpu-orchestrator Controller                │            │
-│  │    (Running in Pod)                         │            │
+│  │    gpu-orchestrator Controller             │            │
+│  │    (Running in Pod)                        │            │
 │  └────────────────────────────────────────────┘            │
-│                                                              │
+│                                                            │
 └────────────────────────────────────────────────────────────┘
 ```
 
