@@ -1,0 +1,41 @@
+apiVersion: gpu.warp.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: llama2-inference
+  namespace: default
+spec:
+  modelName: llama2
+  gpuCount: 2
+  priority: high
+  schedulingStrategy: leastLoaded
+  retryPolicy:
+    maxRetries: 5
+    backoffSeconds: 30
+---
+apiVersion: gpu.warp.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: stable-diffusion-generation
+  namespace: default
+spec:
+  modelName: stable-diffusion-xl
+  gpuCount: 1
+  priority: normal
+  schedulingStrategy: random
+  retryPolicy:
+    maxRetries: 3
+    backoffSeconds: 30
+---
+apiVersion: gpu.warp.dev/v1alpha1
+kind: GPUWorkload
+metadata:
+  name: cost-optimized-training
+  namespace: default
+spec:
+  modelName: bert-training
+  gpuCount: 4
+  priority: low
+  schedulingStrategy: costOptimized
+  retryPolicy:
+    maxRetries: 10
+    backoffSeconds: 60
