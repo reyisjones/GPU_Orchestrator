@@ -1,0 +1,60 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.txt
+coverage.html
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Build artifacts
+bin/
+dist/
+*.o
+*.a
+
+# Controller-gen artifacts (keep generated deepcopy in repo)
+# zz_generated.deepcopy.go
+
+# Logs
+logs/
+*.log
+
+# Kubernetes manifests (generated)
+config/crd/bases/
+config/rbac/
+config/manager/
+
+# Test coverage
+.coverage/
+
+# Local environment files
+.env
+.env.local
+*.env
+
+# Temporary files
+tmp/
+temp/
