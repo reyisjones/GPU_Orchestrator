@@ -77,11 +77,11 @@ A **production-grade Kubernetes GPU Workload Operator** with comprehensive imple
 
 ### ✅ Documentation
 - [x] **README.md** - Project overview, features, quick start
-- [x] **QUICKSTART.md** - 5-minute getting started guide
-- [x] **DEVELOPMENT.md** - Local development setup and workflow
-- [x] **architecture.md** - System design with diagrams and data flow
-- [x] **PROJECT_STRUCTURE.md** - Complete file organization
-- [x] **CONTRIBUTING.md** - Contribution guidelines
+- [x] **docs/quickstart.md** - 5-minute getting started guide
+- [x] **docs/development.md** - Local development setup and workflow
+- [x] **docs/architecture.md** - System design with diagrams and data flow
+- [x] **docs/project_structure.md** - Complete file organization
+- [x] **docs/contributing.md** - Contribution guidelines
 - [x] **Inline Comments** - Key design decisions documented
 
 ### ✅ Configuration & Deployment
@@ -147,9 +147,14 @@ gpu-orchestrator/
 │
 ├── docs/                            # Comprehensive documentation
 │   ├── architecture.md              # System design
-│   └── DEVELOPMENT.md               # Dev guide
+│   ├── development.md               # Dev guide
+│   ├── quickstart.md                # Quick start
+│   ├── contributing.md              # Contribution guidelines
+│   └── project_structure.md         # Structure docs
 │
-├── main.go                          # Entry point
+├── cmd/                             # Command-line applications
+│   └── manager/                     # Manager binary
+│       └── main.go                  # Entry point
 ├── Dockerfile                       # Multi-stage build
 ├── Makefile                         # Build automation
 ├── go.mod / go.sum                 # Dependencies
@@ -307,11 +312,11 @@ The project demonstrates:
 | Document | Purpose |
 |----------|---------|
 | **README.md** | Start here - features and quick start |
-| **QUICKSTART.md** | 5-minute deploy and test |
+| **docs/quickstart.md** | 5-minute deploy and test |
 | **docs/architecture.md** | Deep dive into system design |
-| **docs/DEVELOPMENT.md** | Local development and debugging |
-| **CONTRIBUTING.md** | How to contribute |
-| **PROJECT_STRUCTURE.md** | File organization and purpose |
+| **docs/development.md** | Local development and debugging |
+| **docs/contributing.md** | How to contribute |
+| **docs/project_structure.md** | File organization and purpose |
 
 ---
 
@@ -346,8 +351,8 @@ Each commit represents a cohesive logical unit focusing on a specific feature or
 
 ## 🎯 Getting Started
 
-1. **Review the code** - Start with `main.go` and `controllers/gpuworkload_controller.go`
-2. **Run locally** - Follow `QUICKSTART.md` or `docs/DEVELOPMENT.md`
+1. **Review the code** - Start with `cmd/manager/main.go` and `controllers/gpuworkload_controller.go`
+2. **Run locally** - Follow `docs/quickstart.md` or `docs/development.md`
 3. **Deploy** - Use `scripts/deploy.sh` or `make deploy`
 4. **Test** - Apply examples and monitor with `kubectl`
 5. **Extend** - Add custom scheduling strategies or metrics
@@ -357,8 +362,8 @@ Each commit represents a cohesive logical unit focusing on a specific feature or
 ## 🤝 Support
 
 For questions or issues:
-1. Check `docs/DEVELOPMENT.md` for troubleshooting
-2. Review `CONTRIBUTING.md` for contribution guidelines
+1. Check `docs/development.md` for troubleshooting
+2. Review `docs/contributing.md` for contribution guidelines
 3. Examine inline code comments for design rationale
 4. Check architecture document for system overview
 

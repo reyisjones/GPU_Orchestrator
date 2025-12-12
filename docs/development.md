@@ -40,7 +40,7 @@
    ```bash
    make run
    # Or with flags:
-   go run main.go --leader-elect=false --metrics-bind-address=:8080
+   go run ./cmd/manager/main.go --leader-elect=false --metrics-bind-address=:8080
    ```
 
 ## Project Layout
@@ -198,7 +198,7 @@ logger.V(1).Info("Debug message", "key", value)
 
 ### Use pprof for profiling
 ```bash
-go run main.go --metrics-bind-address=:6060
+go run ./cmd/manager/main.go --metrics-bind-address=:6060
 curl http://localhost:6060/debug/pprof/heap
 ```
 

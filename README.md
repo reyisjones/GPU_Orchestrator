@@ -99,9 +99,11 @@ gpu-orchestrator/
 │   └── manager/               # Controller deployment
 ├── examples/                  # Sample GPUWorkload manifests
 ├── docs/                      # Documentation and diagrams
-├── tests/                     # Unit and integration tests
-└── main.go                    # Entry point
+├── cmd/manager/               # Controller manager entry point
+└── scripts/                   # Deployment and utility scripts
 ```
+
+For detailed project structure, see [docs/project_structure.md](docs/project_structure.md).
 
 ## Configuration
 
@@ -170,8 +172,10 @@ make test
 ### Run the controller locally
 
 ```bash
-go run main.go
+go run ./cmd/manager/main.go
 ```
+
+For more development information, see [docs/development.md](docs/development.md).
 
 ### Run tests with coverage
 
@@ -204,7 +208,7 @@ The project includes:
 
 ## Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! Please see [docs/contributing.md](docs/contributing.md) for detailed guidelines:
 
 1. Fork the repository
 2. Create a feature branch

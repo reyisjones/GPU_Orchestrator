@@ -1,4 +1,0 @@
-# File: go.sum
-# This file is populated by 'go mod download' and 'go mod tidy'
-# It is tracked in git to ensure reproducible builds.
-# Run 'go mod tidy' to update this file after adding/removing dependencies.

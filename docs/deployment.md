@@ -121,13 +121,16 @@ config/
 ### Documentation (7)
 ```
 README.md                            - Project overview
-QUICKSTART.md                        - 5-minute guide
-COMPLETION_SUMMARY.md                - Comprehensive summary
-PROJECT_STRUCTURE.md                 - File organization
+cmd/
+  └── manager/
+      └── main.go                    - Controller entry point
 docs/
   ├── architecture.md                - System design
-  └── DEVELOPMENT.md                 - Dev guide
-CONTRIBUTING.md                      - Guidelines
+  ├── development.md                 - Dev guide
+  ├── quickstart.md                  - 5-minute guide
+  ├── completion_summary.md          - Comprehensive summary
+  ├── project_structure.md           - File organization
+  └── contributing.md                - Guidelines
 ```
 
 ### Examples & Scripts (4)
@@ -327,19 +330,19 @@ This project demonstrates expertise in:
 
 ## 📚 Getting Started
 
-1. **Read first**: QUICKSTART.md (5 minutes)
+1. **Read first**: docs/quickstart.md (5 minutes)
 2. **Deploy**: `./scripts/deploy.sh`
 3. **Test**: `kubectl apply -f examples/gpuworkload-sample.yaml`
 4. **Explore**: `docs/architecture.md` for deep dive
-5. **Develop**: `docs/DEVELOPMENT.md` for local setup
+5. **Develop**: `docs/development.md` for local setup
 
 ---
 
 ## ✅ Next Steps
 
-- [ ] Review COMPLETION_SUMMARY.md for overview
-- [ ] Read QUICKSTART.md for deployment
-- [ ] Review code starting with main.go
+- [ ] Review docs/completion_summary.md for overview
+- [ ] Read docs/quickstart.md for deployment
+- [ ] Review code starting with cmd/manager/main.go
 - [ ] Read architecture.md for design details
 - [ ] Deploy to test cluster
 - [ ] Review code quality and documentation
@@ -367,8 +370,8 @@ This project includes:
 ## 📞 Support
 
 For any questions or issues, refer to:
-1. `QUICKSTART.md` - Quick deployment guide
-2. `docs/DEVELOPMENT.md` - Development setup
+1. `docs/quickstart.md` - Quick deployment guide
+2. `docs/development.md` - Development setup
 3. `docs/architecture.md` - System design
 4. `CONTRIBUTING.md` - How to extend
 

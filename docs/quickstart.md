@@ -183,8 +183,8 @@ kubectl logs -n gpu-orchestrator-system deployment/gpu-orchestrator-controller-m
 
 ## Next Steps
 
-- 📚 Read [Architecture](docs/architecture.md) for deep dive
-- 🔧 Check [Development Guide](docs/DEVELOPMENT.md) for local development
+- 📚 Read [Architecture](architecture.md) for deep dive
+- 🔧 Check [Development Guide](development.md) for local development
 - 📖 View full [README](README.md) for comprehensive documentation
 - 🚀 Explore [Advanced Examples](examples/advanced-examples.yaml)
 

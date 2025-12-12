@@ -57,20 +57,26 @@ GPU_Orchestrator/
 │
 ├── docs/                                  # Documentation
 │   ├── architecture.md                    # System architecture and design
-│   ├── DEVELOPMENT.md                     # Development guide
+│   ├── development.md                     # Development guide
+│   ├── quickstart.md                      # Quick start guide
+│   ├── contributing.md                    # Contribution guidelines
+│   ├── completion_summary.md              # Project completion summary
+│   ├── deployment.md                      # Deployment readiness guide
+│   ├── project_structure.md               # This file
 │   └── diagrams/                          # (Future) ASCII/Mermaid diagrams
 │
 ├── hack/                                  # Build and generation utilities
 │   └── boilerplate.go.txt                 # License header for generated files
 │
-├── main.go                                # Entry point / Manager setup
+├── cmd/                                   # Command-line applications
+│   └── manager/                           # Manager binary
+│       └── main.go                        # Entry point / Manager setup
+│
 ├── Dockerfile                             # Multi-stage Docker build
 ├── Makefile                               # Build targets
 ├── go.mod                                 # Go module definition
 ├── go.sum                                 # Module checksums
 ├── README.md                              # Project overview
-├── QUICKSTART.md                          # Quick start guide
-├── CONTRIBUTING.md                        # Contribution guidelines
 ├── LICENSE                                # Apache 2.0 license
 ├── .gitignore                             # Git ignore patterns
 └── .github/
@@ -111,10 +117,13 @@ GPU_Orchestrator/
 | File | Purpose |
 |------|---------|
 | `README.md` | Project overview, features, quick start |
-| `QUICKSTART.md` | 5-minute getting started guide |
-| `docs/architecture.md` | Detailed system design and data flow |
-| `docs/DEVELOPMENT.md` | Local development setup and guide |
-| `CONTRIBUTING.md` | How to contribute |
+| `docs/quickstart.md` | 5-minute getting started guide |
+| `docs/architecture.md` | System design with diagrams |
+| `docs/development.md` | Local development setup and guide |
+| `docs/contributing.md` | How to contribute |
+| `docs/completion_summary.md` | Project completion summary |
+| `docs/deployment.md` | Deployment readiness guide |
+| `docs/project_structure.md` | File organization (this file) |
 
 ### Examples
 
